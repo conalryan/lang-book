@@ -5,7 +5,7 @@ A common reference implementation of simple applications/libaries in various pro
 ## Languages
 
 - [Typescript](./typescript-book/README.md)
-- [Python](./_python-book/README.md)
+- [Python](./python-book/README.md)
 - [Rust](./_rust-book/README.md)
 
 ## Objective

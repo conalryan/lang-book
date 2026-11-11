@@ -1,0 +1,89 @@
+[project]
+name = "python-book"
+version = "0.0.0"
+description = "Seven small apps that teach Python one concept cluster at a time."
+requires-python = ">=3.14"
+# Depending on every member means a plain `uv sync` installs the whole workspace.
+dependencies = [
+  "calculator",
+  "guessing-game",
+  "contacts",
+  "temperature-logger",
+  "library",
+  "log-analyzer",
+  "todo-api",
+]
+
+[dependency-groups]
+dev = [
+  "httpx2>=2.16",  # backs Starlette/FastAPI's TestClient
+  "mypy>=2.4",
+  "pytest>=9.2",
+  "pytest-cov>=7.1",
+  "ruff>=0.17",
+]
+
+[tool.uv]
+package = false
+
+[tool.uv.workspace]
+members = ["apps/*"]
+
+[tool.uv.sources]
+calculator = { workspace = true }
+guessing-game = { workspace = true }
+contacts = { workspace = true }
+temperature-logger = { workspace = true }
+library = { workspace = true }
+log-analyzer = { workspace = true }
+todo-api = { workspace = true }
+
+[tool.ruff]
+line-length = 100
+target-version = "py314"
+extend-exclude = ["*.md"]  # README snippets are illustrative, not formatted code
+
+[tool.ruff.lint]
+select = [
+  "E", "W",  # pycodestyle
+  "F",       # pyflakes
+  "I",       # isort
+  "UP",      # pyupgrade
+  "B",       # bugbear
+  "SIM",     # simplify
+  "C4",      # comprehensions
+  "PT",      # pytest style
+  "RUF",     # ruff-specific
+  "ANN",     # annotations are mandatory
+  "D",       # docstrings
+]
+ignore = [
+  "D105", "D107",  # magic methods and __init__ need no docstring
+  "D401",          # imperative-mood rule is too strict for property docstrings
+  "D203", "D213",  # conflict with D211 / D212
+]
+
+[tool.ruff.lint.per-file-ignores]
+"**/tests/**" = ["D", "ANN"]
+"**/__init__.py" = ["D104"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "pep257"
+
+[tool.pytest.ini_options]
+testpaths = ["apps"]
+addopts = ["--import-mode=importlib", "--strict-markers", "--strict-config", "-ra"]
+
+[tool.coverage.run]
+source = ["apps"]
+omit = ["*/tests/*", "*/main.py", "*/io.py"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = true
+exclude_also = ["if TYPE_CHECKING:", "assert_never", "if __name__ == .__main__.:"]
+
+[tool.mypy]
+strict = true
+python_version = "3.14"
+plugins = ["pydantic.mypy"]
