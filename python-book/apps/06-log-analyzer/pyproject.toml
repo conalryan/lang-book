@@ -1,0 +1,13 @@
+[project]
+name = "log-analyzer"
+version = "0.0.0"
+description = "Log analyzer with a filter-expression interpreter."
+requires-python = ">=3.14"
+dependencies = []
+
+[project.scripts]
+log-analyzer = "log_analyzer.main:main"
+
+[build-system]
+requires = ["uv_build>=0.13.7,<0.14"]
+build-backend = "uv_build"
