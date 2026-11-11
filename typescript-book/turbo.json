@@ -1,0 +1,18 @@
+{
+  "$schema": "https://turborepo.com/schema.json",
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "inputs": ["src/**", "tsconfig*.json", "package.json"],
+      "outputs": ["dist/**"]
+    },
+    "typecheck": {
+      "dependsOn": ["^build"],
+      "inputs": ["src/**", "test/**", "tsconfig*.json"]
+    },
+    "test": {
+      "inputs": ["src/**", "test/**", "vitest.config.ts", "../../vitest.base.ts"],
+      "outputs": ["coverage/**"]
+    }
+  }
+}

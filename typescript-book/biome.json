@@ -1,0 +1,30 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.6.6/schema.json",
+  "files": {
+    "includes": ["**", "!**/dist", "!**/coverage", "!**/.turbo", "!**/node_modules", "!**/*.md"]
+  },
+  "formatter": {
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineWidth": 100
+  },
+  "linter": {
+    "rules": {
+      "preset": "recommended",
+      "complexity": {
+        "useLiteralKeys": "off"
+      },
+      "style": {
+        "useImportType": "error",
+        "useNodejsImportProtocol": "error"
+      }
+    }
+  },
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": "on"
+      }
+    }
+  }
+}
