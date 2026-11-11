@@ -1,0 +1,13 @@
+[project]
+name = "guessing-game"
+version = "0.0.0"
+description = "Number guessing game: control flow."
+requires-python = ">=3.14"
+dependencies = []
+
+[project.scripts]
+guess = "guessing_game.main:main"
+
+[build-system]
+requires = ["uv_build>=0.13.7,<0.14"]
+build-backend = "uv_build"
