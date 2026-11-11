@@ -6,7 +6,7 @@ A common reference implementation of simple applications/libaries in various pro
 
 - [Typescript](./typescript-book/README.md)
 - [Python](./python-book/README.md)
-- [Rust](./_rust-book/README.md)
+- [Rust](./rust-book/README.md)
 
 ## Objective
 A multi-language, multi-project/package repository that contains concrete examples of the language's features including:
