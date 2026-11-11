@@ -1,0 +1,8 @@
+2024-03-01T10:00:01Z INFO api GET /users status=200 ms=12
+2024-03-01T10:00:02Z INFO api GET /users/7 status=200 ms=8
+2024-03-01T10:00:03Z WARN db slow query ms=950
+2024-03-01T10:00:04Z ERROR api POST /orders status=500 ms=1200
+2024-03-01T10:00:05Z DEBUG cache miss key=user:7
+this line is garbage
+2024-03-01T10:00:06Z ERROR db connection timeout ms=3000
+2024-03-01T10:00:07Z INFO web GET / status=200 ms=30

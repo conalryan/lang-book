@@ -1,0 +1,14 @@
+[package]
+name = "log-analyzer"
+description = "Log analyzer with a filter-expression interpreter."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+
+[[bin]]
+name = "log-analyzer"
+path = "src/main.rs"
+
+[lints]
+workspace = true
