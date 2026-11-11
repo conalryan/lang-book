@@ -1,0 +1,13 @@
+[project]
+name = "temperature-logger"
+version = "0.0.0"
+description = "Temperature statistics: classes, enums, Result."
+requires-python = ">=3.14"
+dependencies = []
+
+[project.scripts]
+templog = "temperature_logger.main:main"
+
+[build-system]
+requires = ["uv_build>=0.13.7,<0.14"]
+build-backend = "uv_build"
