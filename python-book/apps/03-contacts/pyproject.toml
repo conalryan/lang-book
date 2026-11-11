@@ -1,0 +1,13 @@
+[project]
+name = "contacts"
+version = "0.0.0"
+description = "In-memory contact book: collections and functions."
+requires-python = ">=3.14"
+dependencies = []
+
+[project.scripts]
+contacts = "contacts.main:main"
+
+[build-system]
+requires = ["uv_build>=0.13.7,<0.14"]
+build-backend = "uv_build"
